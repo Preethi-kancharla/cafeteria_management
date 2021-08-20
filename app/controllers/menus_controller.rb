@@ -6,4 +6,10 @@ class MenusController < ApplicationController
     def show
       render plain: Menu.find(params[:id]).name
     end
+
+    def create
+        menu = Menu.create!(name: params[:name].capitalize)
+        render plain: "created #{menu.name} with #{menu.id}"
+    end
+
 end
