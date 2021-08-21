@@ -1,1 +1,18 @@
 <h1>Welcome to Cafeteria </h1>
+<ul>
+<li class="cafeteria-navbarButton">
+    <i class="fa fa-sign-in" aria-hidden="true"></i>
+    <%= link_to "Sign In", new_session_path %>
+</li>
+<li class="cafeteria-navbarButton">
+    <i class="fa fa-user-plus" aria-hidden="true"></i>
+    <%= link_to "Sign Up", new_user_path %>
+</li>
+<li>
+    <i class="fa fa-sign-out" aria-hidden="true"></i>
+    <%= link_to "LogOut", destroy_session_path, method: :delete %>
+</li>
+</ul>
+<p class="order-btn">
+  <%= link_to "Order now!", menus_path %>
+</p>
