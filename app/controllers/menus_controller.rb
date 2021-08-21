@@ -17,7 +17,7 @@ class MenusController < ApplicationController
     def update
         menu = Menu.find(params[:id])
         puts "params #{params[:name]}"
-        menu.update(name: params[:name].capitalize)
+        menu.update(name: params[:name].capitalize,active: params[:active])
         if menu.save
           redirect_to(menus_path, notice: "#{menu.name} menu updated successfully!")
         else

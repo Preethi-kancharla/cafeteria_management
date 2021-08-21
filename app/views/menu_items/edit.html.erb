@@ -2,6 +2,12 @@
  
 <%= form_with url: menu_item_path, method: :patch, class: "signUp-form" do |f| %>
   <p> 
+    <%= f.label :active %><br/>
+    <%= f.check_box :active,
+                        checked: @menu_item.active
+    %>
+    </p>
+  <p> 
     <%= f.label :name %><br/>
     <%= f.text_field :name,
                         placeholder: "Menu Item Name",
