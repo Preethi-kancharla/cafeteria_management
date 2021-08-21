@@ -11,4 +11,9 @@ class Menu < ApplicationRecord
         return Menu.new(name: menu_name.capitalize)
 
     end
+    
+    def self.active
+        all.where("active = ?", true)
+    end
+
 end

@@ -1,5 +1,6 @@
 class MenusController < ApplicationController
-    def index
+  before_action :ensure_owner_logged_in, only: [:destroy]  
+  def index
         render plain: Menu.all.to_a.map { |menu| menu.name }.join("\n")
     end
     

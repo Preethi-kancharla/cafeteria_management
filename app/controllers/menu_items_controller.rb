@@ -1,5 +1,7 @@
 class MenuItemsController < ApplicationController
-    def index
+  before_action :ensure_owner_logged_in, only: [:create, :destroy, :edit, :update] 
+  
+  def index
         render plain: MenuItem.all.to_a.map { |item| item.name }.join("\n")
     end
 

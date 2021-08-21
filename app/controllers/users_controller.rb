@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-    def new
+  skip_before_action :ensure_user_logged_in, only: [:create, :new]
+  before_action :ensure_owner_logged_in, only: [:index]  
+  
+  def new
         if current_user
           redirect_to(menus_path, notice: "Your'e already signed up user")
         end

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-    def new
+  skip_before_action :ensure_user_logged_in  
+  def new
         if current_user
           redirect_to(menus_path, notice: "Your'e already signed in user")
         end
