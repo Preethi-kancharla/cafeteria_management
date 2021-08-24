@@ -1,40 +1,42 @@
 class MenusController < ApplicationController
-  before_action :ensure_owner_logged_in, only: [:destroy]  
+  # created by cmd
+  # rails generate controller Menus
+  before_action :ensure_owner_logged_in, only: [:destroy, :all]
+
   def index
-        render plain: Menu.all.to_a.map { |menu| menu.name }.join("\n")
-    end
-    
-    def show
-      render plain: Menu.find(params[:id]).name
-    end
+    @menus = Menu.order(:name)
+    @order = current_user.orders.being_created
+  end
 
-    def new
-    end
+  def all
+    @menus = Menu.order(:name)
+  end
 
-    def edit
-        @menu = Menu.find(params[:id])
-    end
+  def show
+  end
 
-    def update
-        menu = Menu.find(params[:id])
-        puts "params #{params[:name]}"
-        menu.update(name: params[:name].capitalize,active: params[:active])
-        if menu.save
-          redirect_to(menus_path, notice: "#{menu.name} menu updated successfully!")
-        else
-          flash[:error] = menu.errors.full_messages
-          redirect_to edit_menu_path
-        end
-    end
+  def edit
+    @menu = Menu.find(params[:id])
+  end
 
-    def create
-        menu = Menu.create!(name: params[:name].capitalize)
-        render plain: "created #{menu.name} with #{menu.id}"
+  def update
+    menu = Menu.find(params[:id])
+    menu.update(name: params[:name].capitalize,
+                active: params[:active])
+    if menu.save
+      redirect_to(menus_path, notice: "#{menu.name} menu updated successfully!")
+    else
+      flash[:error] = menu.errors.full_messages
+      redirect_to edit_menu_path
     end
+  end
 
-    def destroy
-        @menu = Menu.find(params[:id])
-        @menu.destroy!
-        redirect_to menus_path
+  def destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy!
+    respond_to do |format|
+      format.html { redirect_to(menus_path, notice: "#{@menu.name} menu is deleted successfully!") }
+      format.js
     end
+  end
 end

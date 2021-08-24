@@ -1,3 +1,201 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    font-family: sans-serif;
+  }
+  
+  .cafeteria-navbar {
+    max-width: 100%;
+    min-width: 100%;
+    position: fixed;
+    margin: 0 auto;
+    
+    background: #fff;
+    display: flex;
+    align-items: center;
+    top: 0;
+  }
+  .cafeteria-navbarHeading {
+    margin: 5px;
+    padding: 5px;
+    color: rgba(34, 33, 33, 0.877);
+    font-weight: bold;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    color:rgba(255, 68, 0, 0.87);
+    margin-left: 300px;
+  }
+  .cafeteria-navbarHeading img {
+    padding: 5px;
+  }
+  .cafeteria-navbarAllButtons {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+
+
+  }
+  .cafeteria-navbarButton {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 5px;
+    padding: 5px;
+  }
+  .cafeteria-navbarButton > a,
+  .user-content > p a {
+    text-decoration: none;
+    color: rgba(24, 23, 23, 0.842);
+    font-family: sans-serif;
+    margin-right: 5px;
+    text-align: center;
+    padding: 5px;
+  }
+  .cafeteria-navbarButton > a:hover {
+    color: rgba(255, 68, 0, 0.904);
+  }
+  .notice,
+  .alert,
+  #error_explanation {
+    font-family: sans-serif;
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(153, 253, 153, 0.836);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid darkgreen;
+    color: darkgreen;
+    font-size: 20px;
+  }
+  .alert,
+  #error_explanation {
+    background-color: rgba(252, 155, 138, 0.753);
+    border: 2px solid darkred;
+    color: darkred;
+  }
+  
+  #error_explanation h2 {
+    font-size: 21px;
+    font-weight: bold;
+  }
+  .error-message {
+    text-align: left;
+  }
+  .home-main-pic {
+    display: flex;
+    width: 1200px;
+    margin: 5px auto;
+    text-align: center;
+  }
+  .home-main-pic img {
+    max-height: 700px;
+    width: 1200px;
+  }
+  .home-main {
+    font-family: sans-serif;
+    padding: 8px;
+    text-align: center;
+    color: rgba(255, 68, 0, 0.904);
+  }
+  .order-btn {
+    margin: 5px auto;
+    text-align: center;
+  }
+  .order-btn > a {
+    font-size: 26px;
+    font-family: sans-serif;
+    text-decoration: none;
+    background-color: rgba(14, 12, 12, 0.904);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+  }
+  .dropdown {
+    font-family: sans-serif;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .user-content {
+    display: none;
+    width: 200px;
+    right: 1px;
+    background-color: white;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin: 5px auto;
+    border-radius: 5px;
+  }
+  .user-content ul li {
+    padding: 8px;
+    padding-right: 15px;
+  }
+  .user-content ul li a {
+    color: rgba(24, 23, 23, 0.842);
+    padding-right: 15px;
+  }
+  .dropdown:hover > .user-content {
+    display: block;
+  }
+  .user-content ul li a:hover {
+    color: rgba(255, 68, 0, 0.904);
+  }
+  .name-icon {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(255, 68, 0, 0.87);
+    color: white;
+    margin-right: 5px;
+    font-family: monospace;
+  }
+  .home-main-pic img:nth-child(2) {
+    display: none;
+  }
+  
+  .container {
+    display: none;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  .mobile {
+    display: none;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0px;
+  }

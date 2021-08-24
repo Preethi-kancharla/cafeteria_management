@@ -1,0 +1,41 @@
+<div class="menu-item-head">
+<p>
+  <span class="menu-item-name">
+    <%= menu_item.name.titlecase %>
+  </span>
+  <span class="item-rating">
+    <% menu_item.ratings.to_i.times do %>
+      <%= image_tag "rated-star-16.png" %>
+    <% end %>
+    <% (5-menu_item.ratings.to_i).times do %>
+      <%= image_tag "star-16.png" %>
+    <% end %>
+    <span class="n-ratings">
+      <%= menu_item.no_of_ratings %>
+    </span>
+  </span>
+
+  <span class="menuItem-details">
+    <span class="menuItem-price">
+      ₹<%= menu_item.price %>
+    </span>
+    
+    <span class="menuItem-description"> <%= menu_item.description %> </span>
+  </span>
+</p>
+<p class="orderItem-updateItem">
+  <% if @current_user.is_owner? %>
+    <p class="each-menuItem-delete">
+      <%= link_to edit_menu_item_path(id: menu_item.id) do %>
+        <%= image_tag "edit-26.png", class: "TodoSection-todoDelete" %>
+      <% end %>
+      <%= link_to menu_item,
+                  method: :delete,
+                  data: {confirm: 'Are you sure?'},
+                  remote: true do %>
+        <%= image_tag "trash.png" %>
+      <% end %>
+    </p>
+  <% end %>
+</p>
+</div>

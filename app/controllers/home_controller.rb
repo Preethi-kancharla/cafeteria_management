@@ -1,9 +1,10 @@
 class HomeController < ApplicationController
-    def index 
-        current_user
+    skip_before_action :ensure_user_logged_in
+  
+    def index
+      current_user
     end
 
     def about
     end
-        
 end

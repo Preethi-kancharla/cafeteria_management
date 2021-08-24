@@ -1,0 +1,78 @@
+<nav class="cafeteria-navbar">
+  <h2 class="cafeteria-navbarHeading">
+    <%= image_tag "logo.png" %>YammiFood
+    <div class="container">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </h2>
+  <ul class="cafeteria-navbarAllButtons" id="cafeteria-navbarAllButtons">
+    <% if @current_user %>
+      <li class="cafeteria-navbarButton">
+        <i class="fa fa-home"></i>
+        <%= link_to "Home", menus_path %>
+      </li>
+      <% if @current_user.is_clerk? || @current_user.is_owner? %>
+        <li class="cafeteria-navbarButton">
+          <i class="fa fa-hourglass-half" aria-hidden="true"></i>
+          <%= link_to "Pending Orders", pending_orders_path %>
+        </li>
+      <% end %>
+      <% if @current_user.is_owner? %>
+        <li class="cafeteria-navbarButton">
+          <i class="fa fa-list-alt" aria-hidden="true"></i>
+          <%= link_to "All Orders", all_orders_path %>
+        </li>
+        <li class="cafeteria-navbarButton">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          <%= link_to "Users", users_path %>
+        </li>
+      <% end %>
+      <li class="cafeteria-navbarButton">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <%= link_to "Cart", cart_path %>
+      </li>
+      <li class="cafeteria-navbarButton">
+          <%= image_tag "logout.png" %>
+          <%= link_to "LogOut", destroy_session_path, method: :delete %>
+      </li>
+      <li class="cafeteria-navbarButton dropdown">
+        <span class="name-icon"><%= @current_user.name[0] %></span><%= @current_user.name %>
+        <div class="user-content">
+          <ul>
+            <li>
+              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              <%= link_to "My Orders", orders_path %>
+            </li>
+            <li>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+              <%= link_to "Edit Profile", edit_user_path(id: @current_user.id) %>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="cafeteria-navbarButton mobile">
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        <%= link_to "My Orders", orders_path %>
+      </li>
+      <li class="cafeteria-navbarButton mobile">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        <%= link_to "Edit Profile", edit_user_path(id: @current_user.id) %>
+      </li>
+      <li class="cafeteria-navbarButton mobile">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        <%= link_to "LogOut", destroy_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li class="cafeteria-navbarButton">
+        <%= image_tag "sign-in.png" %>
+        <%= link_to "Sign In", new_session_path %>
+      </li>
+      <li class="cafeteria-navbarButton">
+        <%= image_tag "sign-up.png" %>
+        <%= link_to "Sign Up", new_user_path %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

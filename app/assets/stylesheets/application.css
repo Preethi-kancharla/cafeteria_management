@@ -13,3 +13,83 @@
  *= require_tree .
  *= require_self
  */
+.belownav{
+    padding: 0 20px;
+    height: 287px;
+    background-color: #494d60;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-top: 105px;
+}
+
+.content_in_belownav {
+    max-width: 1200px;
+    min-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+}
+.content_in_belownav > h3{ 
+    text-align: left;
+}
+
+.content_in_belownav > .order-btn{ 
+    text-align: right;
+}
+
+footer{
+    padding: 0 20px;
+    background-color: #494d60;
+    min-height: 298px;
+    width: 100%;
+    color: #fff;
+    overflow: scroll;
+    bottom: 0;
+    position: relative;
+    margin-bottom: 0;
+}
+.footer-page{
+    min-width: 90vw;
+    max-width: 90vw;
+    height: auto;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 76px;
+    display: flex;
+    margin-left: 300px;
+    bottom: 0;
+    border-bottom: 1px solid #4d4d4d;
+    justify-content: space-between;
+}
+
+
+.list_head_footer{
+    color: gray;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display:flex;
+
+}
+.list_head_footer2_1{
+    margin-top: 30px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    color: #fff;
+}
+.list_footer{
+    margin-top: 0;
+    display: block;
+    font-size: 17px;
+    color: #fff;
+}
+.linkclass{
+    color: inherit;
+    font-weight: 300;
+}

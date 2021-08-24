@@ -1,0 +1,58 @@
+  .search-box {
+    max-width: 100%;
+    margin: 0px auto;
+    padding: 8px;
+    text-align: center;
+  }
+  
+
+  .search-box > form {
+    margin: 0px auto;
+    margin-left: 400px;
+  }
+  .search-box > form input,
+  .sales-reports input {
+    font-size: 23px;
+    margin: 0px;
+    padding: 5px;
+    border: 0px;
+    text-align: center;
+    border-radius: 0px;
+  }
+  .search-box > form input[type="submit"],
+  input[type="button"],
+  .sales-reports input[type="submit"] {
+    background-color: rgba(255, 68, 0, 0.87);
+    border-radius: 0px;
+    padding: 5px 10px;
+    color: white;
+  }
+  .search-box > form input[type="search"] {
+    background-color: white;
+  }
+  
+  .addItem-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin:auto;
+    margin-left: 100px;
+    
+  }
+  .addItem-form > form {
+    margin: 0px auto;
+    padding: 10px;
+  }
+  .addItem-form > form > input {
+    margin: 5px auto;
+  }
+  .addItem-form > form input {
+    background-color: white;
+    border: 0px;
+    font-size: 21px;
+    padding: 5px;
+  }
+  .addItem-form > form input[type="submit"] {
+    background-color: rgba(255, 68, 0, 0.87);
+    color: white;
+  }

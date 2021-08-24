@@ -1,0 +1,17 @@
+<main class="all-users">
+  <% content_for :search do %>
+    <div class="search-box">
+      <%= form_with(url: search_path, method: "get", local: true) do |form|%>
+        <%= form.text_field :email, placeholder: "Enter email of user" %>
+        <%= form.submit "Search User", placeholder: "Enter email of user" %>
+      <% end %>
+    </div>
+  <% end %>
+  <section>
+    <table class="all-clerks">
+      <%= render partial: "user-details", locals: {roles: nil, owners: @owners, heading: "Owner"} %>
+      <%= render partial: "user-details", locals: {roles: @clerks, owners: nil, heading: "Clerks"} %>
+      <%= render partial: "user-details", locals: {roles: @customers, owners: nil, heading: "Customers"} %>
+    </table>
+  </section>
+</main>

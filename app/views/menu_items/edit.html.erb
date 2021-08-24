@@ -1,43 +1,51 @@
-<h1>Update a menu item</h1>
- 
-<%= form_with url: menu_item_path, method: :patch, class: "signUp-form" do |f| %>
-  <p> 
-    <%= f.label :active %><br/>
-    <%= f.check_box :active,
+<main class="signUpBox">
+  <p class="signUp-login">
+    Edit item
+  </p>
+  <%= form_with url: menu_item_path, method: :patch, class: "signUp-form" do |form| %>
+    <p class="Active">
+      <%= label_tag(:active,"Active") %>
+      <%= form.check_box :active,
                         checked: @menu_item.active
-    %>
+      %>
     </p>
-  <p> 
-    <%= f.label :name %><br/>
-    <%= f.text_field :name,
-                        placeholder: "Menu Item Name",
+    <%= form.text_field :name,
+                        placeholder: "Item Name",
                         value: @menu_item.name,
                         autofocus:"autofocus"
     %>
-    </p>
-    <p> 
-    <%= f.label :Menu %><br/> 
-    <%= f.text_field :menu_name,
-                            placeholder: "Menu Name",
-                            value: @menu.name,
-                            autofocus:"autofocus"
+    <br>
+    <%= form.number_field :price,
+                          placeholder: "Price",
+                          value: @menu_item.price,
+                          class: "edit-item-price",
+                          autofocus:"autofocus"
     %>
-  </p>
-  <p> 
-    <%= f.label :Price %><br/> 
-    <%= f.text_field :price,
-                        placeholder: "Menu Item price",
-                        value: @menu_item.price,
-                        autofocus:"autofocus" %>
-  </p>
-  <p>
-    <%= f.label :description %><br/> 
-    <%= f.text_area :description,
-                        placeholder: "Menu Item description",
-                        value: @menu_item.description,
-                        autofocus:"autofocus" %> 
-  </p>
-  <p>
-    <%= f.submit %> 
-  </p>
-<% end %>
+    <br>
+    <%= form.text_field :description,
+                         value: @menu_item.description,
+                         placeholder: "Description"
+    %>
+    <br>
+    <p class="menus-dropdown-edit">
+      <select name="menu_name" id="menu-name">
+        <option value="" disabled selected style="color:#7e808c">Select Menu to add</option>
+        <% Menu.order(:name).each do |menu|%>
+          <option value=<%= menu.id %>
+          <%= @menu_item.menu.id == menu.id ? "selected" : nil %>
+          >
+            <%= menu.name %>
+          </option>
+        <% end %>
+        <option value="Others"> Others </option>
+      </select>
+    </p>
+    <br>
+    <%= form.text_field :new_menu_name,
+                        placeholder: "New Menu Name",
+                        class: "new-menu-name-edit"
+    %>
+    <br>
+    <%= form.submit "Update", data: { "disable-with": "Updating..." }, class: "signUp-button"%>
+  <%end%>
+</main>
