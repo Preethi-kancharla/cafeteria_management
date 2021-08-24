@@ -6,5 +6,6 @@ class HomeController < ApplicationController
     end
 
     def about
+      current_user
     end
 end
