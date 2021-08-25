@@ -9,7 +9,7 @@
   <% end %>
   <section>
     <table class="all-clerks">
-      <%= render partial: "user-details", locals: {roles: nil, owners: @owners, heading: "Owner"} %>
+      <%= render partial: "user-details", locals: {roles: @owners, owners: @owners, heading: "Owner"} %>
       <%= render partial: "user-details", locals: {roles: @clerks, owners: nil, heading: "Clerks"} %>
       <%= render partial: "user-details", locals: {roles: @customers, owners: nil, heading: "Customers"} %>
     </table>

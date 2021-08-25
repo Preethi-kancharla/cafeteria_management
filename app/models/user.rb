@@ -25,13 +25,17 @@ class User < ApplicationRecord
     user = all.where("email = ?", email).exists? ? find_by(email: email) : false
   end
 
-  def alter_role
-    if role == "customer"
-      self.role = "clerk"
-    else
-      self.role = "customer"
+  def alter_role(role1)
+    #if role == "customer"
+      #self.role = "clerk"
+    #else
+      #self.role = "customer"
+    #end
+    #save!
+    if role!=role1
+      self.role= role1
+      save!
     end
-    save!
   end
 
   def self.owners

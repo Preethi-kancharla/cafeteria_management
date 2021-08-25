@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def change_role
     @user = User.find(params[:id])
-    @user.alter_role
+    @user.alter_role(params[:change_to_role])
     redirect_to(users_path, notice: "#{@user.name} role is changed to #{@user.role} ")
   end
 end

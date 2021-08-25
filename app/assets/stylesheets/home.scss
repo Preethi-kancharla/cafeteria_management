@@ -53,6 +53,9 @@ body {
     margin-right: 5px;
     text-align: center;
     padding: 5px;
+
+    display: block;
+
   }
   .cafeteria-navbarButton > a:hover {
     color: rgba(255, 68, 0, 0.904);
@@ -121,6 +124,7 @@ body {
     position: relative;
     display: inline-block;
     cursor: pointer;
+    
   }
   .user-content {
     display: none;
@@ -131,6 +135,10 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     margin: 5px auto;
     border-radius: 5px;
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
   }
   .user-content ul li {
     padding: 8px;
@@ -146,6 +154,9 @@ body {
   .user-content ul li a:hover {
     color: rgba(255, 68, 0, 0.904);
   }
+
+  
+  .user-content > 
   .name-icon {
     display: inline-block;
     height: 30px;
