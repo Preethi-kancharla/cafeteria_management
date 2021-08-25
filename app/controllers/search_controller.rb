@@ -21,6 +21,7 @@ class SearchController < ApplicationController
         else
           redirect_to(menus_path, alert: "menuitem not found")
         end
-    end
+      end
+  end
 end
   
