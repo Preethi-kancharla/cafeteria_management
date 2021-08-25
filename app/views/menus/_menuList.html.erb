@@ -20,7 +20,7 @@
             <% end %>
           </span>
         <% end %>
-        <a class=<%= menu.id %> id="menuName"><%= menu.name.titlecase %></a>
+        <a href =<%= "#menuList-#{menu.id}" %>  class=<%= menu.id %> id="menuName"><%= menu.name.titlecase %></a>
       </li>
     <% end %>
   </ul>

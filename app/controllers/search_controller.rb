@@ -15,7 +15,12 @@ class SearchController < ApplicationController
           redirect_to(users_path, alert: "User not found")
         end
       elsif params[:menu_item]
-      end
+        menuitem=MenuItem.get_menuitem_by_name(params[:menu_item])
+        if menuitem
+          redirect_to("/menus##{menuitem.id}")
+        else
+          redirect_to(menus_path, alert: "menuitem not found")
+        end
     end
 end
   

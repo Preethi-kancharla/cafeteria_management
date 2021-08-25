@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :ensure_user_logged_in
-
+ 
   def ensure_user_logged_in
     unless current_user
       redirect_to(root_path, alert: "Please login before continuing")

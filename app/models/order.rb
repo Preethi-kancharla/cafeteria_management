@@ -28,7 +28,7 @@ class Order < ApplicationRecord
 
   def total_price
     price = 0
-    order_items.each { |item| price = price + item.menu_item_price }
+    order_items.each { |item| price = price + item.menu_item_price}
     price
   end
 

@@ -42,6 +42,7 @@ class OrdersController < ApplicationController
 
   def cart
     @order = current_user.orders.being_created
+    #@cart_count=current_user.orders.total_cart_items
   end
 
   def all_orders
@@ -58,6 +59,9 @@ class OrdersController < ApplicationController
       format.js
     end
   end
+
+
+
 
   def reports
     @found = params[:user_id].present? ? User.where("id = ?", params[:user_id].to_i).exists? : true

@@ -8,4 +8,8 @@ class MenuItem < ApplicationRecord
     def self.active
       all.where("active = ?", true)
     end
+
+    def get_menuitem_by_name(name)
+      all.where("name = ?", name)
+    end
 end
