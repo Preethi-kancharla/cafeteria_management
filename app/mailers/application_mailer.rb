@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'https://yammifood.herokuapp.com'
-  layout 'mailer'
+  default from: "yammifoodcafe@gmail.com"
+  layout "mailer"
 end
