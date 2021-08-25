@@ -7,7 +7,7 @@ class OrderMailer < ApplicationMailer
     #
     def welcome_user
       @user = params[:user]
-      #mail(to: @user.email, subject: "Welcome to cafeteria")
+      mail(to: @user.email, subject: "Welcome to cafeteria")
     end
   
     # Subject can be set in your I18n file at config/locales/en.yml
@@ -17,7 +17,7 @@ class OrderMailer < ApplicationMailer
     #
     def order_confirmation
       @user, @order = params[:user], params[:order]
-      #mail(to: @user.email, subject: "Order Confirmed")
+      mail(to: @user.email, subject: "Order Confirmed")
     end
   
     # Subject can be set in your I18n file at config/locales/en.yml
@@ -27,7 +27,7 @@ class OrderMailer < ApplicationMailer
     #
     def order_delivered
       @user, @order = params[:user], params[:order]
-      #mail(to: @user.email, subject: "Order delivered!")
+      mail(to: @user.email, subject: "Order delivered!")
     end
   
     # Subject can be set in your I18n file at config/locales/en.yml
@@ -37,7 +37,7 @@ class OrderMailer < ApplicationMailer
     #
     def new_order_placed
       @order = params[:order]
-      #mail(to: "preethiluna@gmail.com", subject: "New Order Placed")
+      mail(to: "preethiluna@gmail.com", subject: "New Order Placed")
     end
   end
   
